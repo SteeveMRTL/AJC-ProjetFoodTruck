@@ -1,31 +1,40 @@
 package food.foodTruck.model;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
 public class Genre {
+
+	@Id
+	@GeneratedValue
 	private int idGenre;
 	private String genre;
+	@OneToMany(mappedBy= "genre")
+	private Collection<Utilisateur> utilisateurs;
+	@Version
 	private int version;
 
 //Constructeurs
 
-	public Genre(int idGenre, String genre, int version) {
-		super();
-		this.idGenre = idGenre;
-		this.genre = genre;
-		this.version = version;
-	}
-
 	public Genre() {
 		super();
 	}
-	
-	
-	//Accesseur
-	@Id
+
+	public Genre(int idGenre, String genre, Collection<Utilisateur> utilisateurs, int version) {
+		super();
+		this.idGenre = idGenre;
+		this.genre = genre;
+		this.utilisateurs = utilisateurs;
+		this.version = version;
+	}
+
+//Accesseur
 	public int getIdGenre() {
 		return idGenre;
 	}
@@ -41,7 +50,15 @@ public class Genre {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-@Version
+
+	public Collection<Utilisateur> getUtilisateurs() {
+		return utilisateurs;
+	}
+
+	public void setUtilisateurs(Collection<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
+	}
+
 	public int getVersion() {
 		return version;
 	}
@@ -50,16 +67,10 @@ public class Genre {
 		this.version = version;
 	}
 
-	//ToString
+	@Override
 	public String toString() {
-		return "Genre [idGenre=" + idGenre + ", genre=" + genre + ", version=" + version + "]";
+		return "Genre [idGenre=" + idGenre + ", genre=" + genre + ", utilisateurs=" + utilisateurs + ", version="
+				+ version + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

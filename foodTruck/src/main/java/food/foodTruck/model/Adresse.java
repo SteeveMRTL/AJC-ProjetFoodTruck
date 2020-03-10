@@ -1,23 +1,26 @@
 package food.foodTruck.model;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
 public class Adresse {
-
+    @Id
 	private int idAdresse;
 	private int numRue;
 	private int codePostal;
 	private String ville;
-	private String Pays;
+	private String pays;
 	private String typeAdresse;
-	private int idUtilisateur;
+	@OneToMany (mappedBy ="adresse")
+	private Collection<Utilisateur> utilisateurs;
 	private boolean isActive;
+	@Version
 	private int vesrsion;
 
 	// Constructeurs
@@ -26,22 +29,24 @@ public class Adresse {
 		super();
 	}
 
-	public Adresse(int idAdresse, int numRue, int codePostal, String ville, String pays, String typeAdresse,
-			int idUtilisateur, boolean isActive, int vesrsion) {
+
+	public Adresse(int idAdresse, int numRue, int codePostal, String ville, String pays, Collection<Utilisateur> utilisateurs,
+			boolean isActive, int vesrsion) {
 		super();
 		this.idAdresse = idAdresse;
 		this.numRue = numRue;
 		this.codePostal = codePostal;
 		this.ville = ville;
-		Pays = pays;
-		this.typeAdresse = typeAdresse;
-		this.idUtilisateur = idUtilisateur;
+		this.pays = pays;
+		this.utilisateurs = utilisateurs;
 		this.isActive = isActive;
 		this.vesrsion = vesrsion;
 	}
 
+
+
 	// Accesseurs
-@Id
+
 	public int getIdAdresse() {
 		return idAdresse;
 	}
@@ -75,11 +80,11 @@ public class Adresse {
 	}
 
 	public String getPays() {
-		return Pays;
+		return pays;
 	}
 
 	public void setPays(String pays) {
-		Pays = pays;
+		pays = pays;
 	}
 
 	public String getTypeAdresse() {
@@ -91,14 +96,6 @@ public class Adresse {
 	}
 
 	
-	public int getIdUtilisateur() {
-		return idUtilisateur;
-	}
-
-	public void setIdUtilisateur(int idUtilisateur) {
-		this.idUtilisateur = idUtilisateur;
-	}
-
 	public boolean isActive() {
 		return isActive;
 	}
@@ -106,7 +103,7 @@ public class Adresse {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-@Version
+
 	public int getVesrsion() {
 		return vesrsion;
 	}
@@ -115,11 +112,14 @@ public class Adresse {
 		this.vesrsion = vesrsion;
 	}
 
-	// ToString
+
+	@Override
 	public String toString() {
 		return "Adresse [idAdresse=" + idAdresse + ", numRue=" + numRue + ", codePostal=" + codePostal + ", ville="
-				+ ville + ", Pays=" + Pays + ", typeAdresse=" + typeAdresse + ", idUtilisateur=" + idUtilisateur
-				+ ", isActive=" + isActive + "]";
+				+ ville + ", pays=" + pays + ", typeAdresse=" + typeAdresse + ", utilisateurs=" + utilisateurs
+				+ ", isActive=" + isActive + ", vesrsion=" + vesrsion + "]";
 	}
+
+	
 
 }

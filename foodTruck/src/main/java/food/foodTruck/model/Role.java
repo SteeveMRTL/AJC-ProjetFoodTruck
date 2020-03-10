@@ -1,24 +1,28 @@
 package food.foodTruck.model;
 
+import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Version;
 
 @Entity
-public class role {
+public class Role {
 	private int idRole;
 	private String nom;
+	private Collection<Utilisateur> utilisateur;
 	private int version;
 	
 	
 	//Constructeur
-	public role() {
+	public Role() {
 		super();
 	}
 	
 	
 	
-	public role(int idRole, String nom, int version) {
+	public Role(int idRole, String nom, int version) {
 		super();
 		this.idRole = idRole;
 		this.nom = nom;

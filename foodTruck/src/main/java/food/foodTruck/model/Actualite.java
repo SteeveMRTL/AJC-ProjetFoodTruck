@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 
 @Entity
-public class actualite {
+public class Actualite {
 	
 	private int id;
 	private String title;
@@ -19,7 +19,7 @@ public class actualite {
 	
 	
 	//Constructeur
-	public actualite(int id, String title, String description, String dateCreation, String dateFinValidité,
+	public Actualite(int id, String title, String description, String dateCreation, String dateFinValidité,
 			String imageURL, String utilisateurCreation, int version) {
 		super();
 		this.id = id;
@@ -33,7 +33,7 @@ public class actualite {
 	}
 
 
-	public actualite() {
+	public Actualite() {
 		super();
 	}
 
