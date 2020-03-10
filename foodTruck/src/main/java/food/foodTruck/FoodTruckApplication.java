@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class FoodTruckApplication {
+	
+	
+	
+	private Integer many;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FoodTruckApplication.class, args);
