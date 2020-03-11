@@ -21,6 +21,7 @@ public class ProduitApiController {
 	private  EnteteCommandeRepository repoEntiteCommande;
 	private  TypeRepasRepository repoTypeRepas;
 	private  FamilleProduitRepository repoFamilleRepas;
+	@Autowired
 	private  ProduitRepository repoProduit;
 	private  LigneCommandeRepository RepoLigne;
 	

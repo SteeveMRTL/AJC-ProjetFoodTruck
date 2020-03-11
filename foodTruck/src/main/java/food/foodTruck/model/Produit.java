@@ -21,6 +21,7 @@ public class Produit {
 	@JoinColumn(name="idFamilleProduit")
 	private FamilleProduit familleProduit;
 	private int prix;
+	private String nom;
 	private String imageUrl;
 	private String compoProduit;
 	private int stock;
@@ -43,6 +44,14 @@ public class Produit {
 	public void setIdProduit(int idProduit) {
 		this.idProduit = idProduit;
 	}
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
 	public TypeRepas getTypeRepas() {
 		return typeRepas;
@@ -52,12 +61,12 @@ public class Produit {
 		this.typeRepas = typeRepas;
 	}
 
-	public FamilleProduit getFamilleproduit() {
+	public FamilleProduit getFamilleProduit() {
 		return familleProduit;
 	}
 
-	public void setFamilleproduit(FamilleProduit familleproduit) {
-		this.familleProduit = familleproduit;
+	public void setFamilleProduit(FamilleProduit familleProduit) {
+		this.familleProduit = familleProduit;
 	}
 
 	public int getPrix() {
