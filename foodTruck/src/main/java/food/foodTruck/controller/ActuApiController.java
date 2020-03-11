@@ -25,7 +25,7 @@ public class ActuApiController {
 		return repoactus.findAll();
 	}
 	
-	@GetMapping("")
+	@GetMapping("findAllAvis")
 	public List<Avis>getAvis() {
 		return repoavis.findAll();
 	}
