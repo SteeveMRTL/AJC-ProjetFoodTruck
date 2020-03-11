@@ -16,27 +16,11 @@ public class Actualite {
 	private String description;
 	private String dateCreation;
 	private String dateFinValidité;
-	private String imageURL;
+	private String imageUrl;
 	private String utilisateurCreation;
 	
 	@Version
 	private int version;
-	
-	
-	//Constructeur
-	public Actualite(int id, String title, String description, String dateCreation, String dateFinValidité,
-			String imageURL, String utilisateurCreation, int version) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.dateCreation = dateCreation;
-		this.dateFinValidité = dateFinValidité;
-		this.imageURL = imageURL;
-		this.utilisateurCreation = utilisateurCreation;
-		this.version = version;
-	}
-
 
 	public Actualite() {
 		super();
@@ -96,13 +80,13 @@ public class Actualite {
 	}
 
 
-	public String getImageURL() {
-		return imageURL;
+	public String getImageUrl() {
+		return imageUrl;
 	}
 
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 
@@ -124,29 +108,5 @@ public class Actualite {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-
-
-	//ToString
-	public String toString() {
-		return "actualite [id=" + id + ", title=" + title + ", description=" + description + ", dateCreation="
-				+ dateCreation + ", dateFinValidité=" + dateFinValidité + ", imageURL=" + imageURL
-				+ ", utilisateurCreation=" + utilisateurCreation + ", version=" + version + "]";
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
