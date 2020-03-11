@@ -23,8 +23,6 @@ public class UtilisateurApiController {
 //	private AdresseRepository repoAdresse;
 	
 	
-	
-	
 	@GetMapping("findAll")
 	public List<Utilisateur> getAll() {
 		return repoUtilisateur.findAll();

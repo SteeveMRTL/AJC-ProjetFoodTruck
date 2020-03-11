@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import food.foodTruck.model.EnteteCommande;
+import food.foodTruck.model.Produit;
 import food.foodTruck.repository.EnteteCommandeRepository;
 import food.foodTruck.repository.FamilleProduitRepository;
 import food.foodTruck.repository.LigneCommandeRepository;
@@ -25,8 +25,8 @@ public class ProduitApiController {
 	private  LigneCommandeRepository RepoLigne;
 	
 	@GetMapping("findAll")
-	public List<EnteteCommande> getAll() {
-		return repoEntiteCommande.findAll();
+	public List<Produit> getAll() {
+		return repoProduit.findAll();
 	}
 
 }
