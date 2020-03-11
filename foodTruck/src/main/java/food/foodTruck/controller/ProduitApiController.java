@@ -19,9 +19,13 @@ import food.foodTruck.repository.TypeRepasRepository;
 public class ProduitApiController {
 	@Autowired
 	private  EnteteCommandeRepository repoEntiteCommande;
+	@Autowired
 	private  TypeRepasRepository repoTypeRepas;
+	@Autowired
 	private  FamilleProduitRepository repoFamilleRepas;
+	@Autowired
 	private  ProduitRepository repoProduit;
+	@Autowired
 	private  LigneCommandeRepository RepoLigne;
 	
 	@GetMapping("findAll")

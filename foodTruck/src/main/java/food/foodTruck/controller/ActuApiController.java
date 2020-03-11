@@ -18,6 +18,7 @@ public class ActuApiController {
 	
 	@Autowired
 	private  ActualiteRepository repoActus;
+	@Autowired
 	private AvisRepository repoAvis;
 	
 	@GetMapping("findAll")
