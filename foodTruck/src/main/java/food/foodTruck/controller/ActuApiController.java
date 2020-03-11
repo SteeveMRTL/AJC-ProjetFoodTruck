@@ -17,17 +17,17 @@ import food.foodTruck.repository.AvisRepository;
 public class ActuApiController {
 	
 	@Autowired
-	private  ActualiteRepository repoactus;
-	private AvisRepository repoavis;
+	private  ActualiteRepository RepoActus;
+	private AvisRepository RepoAvis;
 	
 	@GetMapping("findAll")
 	public List<Actualite>getAll() {
-		return repoactus.findAll();
+		return RepoActus.findAll();
 	}
 	
 	@GetMapping("findAllAvis")
 	public List<Avis>getAvis() {
-		return repoavis.findAll();
+		return RepoAvis.findAll();
 	}
 	
 	

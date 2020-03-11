@@ -17,17 +17,17 @@ import food.foodTruck.repository.UtilisateurRepository;
 @RequestMapping("/utilisateur")
 public class UtilisateurApiController {
 	@Autowired
-	private  GenreRepository repogenre;
-	private RoleRepository reporole;
-	private UtilisateurRepository repoutilisateur;
-	private AdresseRepository repoadresse;
+	private  GenreRepository RepoGenre;
+	private RoleRepository RepoRole;
+	private UtilisateurRepository RepoUtilisateur;
+	private AdresseRepository repoAdresse;
 	
 	
 	
 	
 	@GetMapping("findAll")
 	public List<Utilisateur> getAll() {
-		return repoutilisateur.findAll();
+		return RepoUtilisateur.findAll();
 	}
 	
 

@@ -18,15 +18,15 @@ import food.foodTruck.repository.TypeRepasRepository;
 @RequestMapping("/produit")
 public class ProduitApiController {
 	@Autowired
-	private  EnteteCommandeRepository repoentitecommande;
-	private  TypeRepasRepository repotyperepas;
-	private  FamilleProduitRepository repofamillerepas;
-	private  ProduitRepository repoproduit;
-	private LigneCommandeRepository repoligne;
+	private  EnteteCommandeRepository repoEntiteCommande;
+	private  TypeRepasRepository repoTypeRepas;
+	private  FamilleProduitRepository repoFamilleRepas;
+	private  ProduitRepository repoProduit;
+	private  LigneCommandeRepository RepoLigne;
 	
 	@GetMapping("findAll")
 	public List<EnteteCommande> getAll() {
-		return repoentitecommande.findAll();
+		return repoEntiteCommande.findAll();
 	}
 
 }
