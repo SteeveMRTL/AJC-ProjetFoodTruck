@@ -2,10 +2,12 @@ package food.foodTruck.model;
 
 import java.util.Collection;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+@ Entity
 public class FamilleProduit {
 
 	// attributs
@@ -16,7 +18,7 @@ public class FamilleProduit {
 	
 	private boolean actif;
 	
-	@OneToMany(mappedBy="FamilleProduit")
+	@OneToMany(mappedBy="familleProduit")
 	public Collection<Produit> produits;
 	
 	@Version

@@ -17,6 +17,7 @@ public class Adresse {
 	private String ville;
 	private String pays;
 	private String typeAdresse;
+	@OneToMany (mappedBy="adresse")
 	private Collection<Utilisateur> utilisateurs;
 	private boolean isActive;
 	@Version

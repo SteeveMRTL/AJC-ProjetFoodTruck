@@ -1,10 +1,10 @@
 package food.foodTruck.model;
 
 import java.util.Collection;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
@@ -12,9 +12,12 @@ public class Role {
 	@Id
 	private int idRole;
 	private String nom;
+	@OneToMany (mappedBy ="role")
 	private Collection<Utilisateur> utilisateur;
 	@Version
 	private int version;
+	
+	
 	
 	
 	//Constructeur

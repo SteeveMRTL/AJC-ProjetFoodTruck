@@ -2,9 +2,9 @@ package food.foodTruck.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Version;
-
-import food.foodTruck.model.Utilisateur;
 
 @Entity
 public class Avis {
@@ -13,6 +13,8 @@ public class Avis {
 	@Id
 	private int idAvis;
 	
+	@ManyToOne
+	@JoinColumn (name ="idUtilisateur")
 	private Utilisateur utilisateur;
 	
 	private String commentaire;

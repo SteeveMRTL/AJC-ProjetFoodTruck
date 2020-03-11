@@ -1,13 +1,16 @@
 package food.foodTruck.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Version;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Version;
+
 
 @Entity
 public class Actualite {
-	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String title;
 	private String description;
@@ -15,6 +18,8 @@ public class Actualite {
 	private String dateFinValidité;
 	private String imageURL;
 	private String utilisateurCreation;
+	
+	@Version
 	private int version;
 	
 	
@@ -40,7 +45,7 @@ public class Actualite {
 
 	
 	//Accesseurs
-	@Id
+	
 	public int getId() {
 		return id;
 	}
@@ -110,7 +115,7 @@ public class Actualite {
 		this.utilisateurCreation = utilisateurCreation;
 	}
 
-@Version
+
 	public int getVersion() {
 		return version;
 	}

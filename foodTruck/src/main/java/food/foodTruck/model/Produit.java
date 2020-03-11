@@ -12,12 +12,14 @@ public class Produit {
 	//attributs
 	@Id
 	private int idProduit;
+	
 	@ManyToOne
 	@JoinColumn(name="idTypeRepas")
 	private TypeRepas typeRepas;
+	
 	@ManyToOne
 	@JoinColumn(name="idFamilleProduit")
-	private FamilleProduit familleproduit;
+	private FamilleProduit familleProduit;
 	private int prix;
 	private String imageUrl;
 	private String compoProduit;
@@ -51,11 +53,11 @@ public class Produit {
 	}
 
 	public FamilleProduit getFamilleproduit() {
-		return familleproduit;
+		return familleProduit;
 	}
 
 	public void setFamilleproduit(FamilleProduit familleproduit) {
-		this.familleproduit = familleproduit;
+		this.familleProduit = familleproduit;
 	}
 
 	public int getPrix() {

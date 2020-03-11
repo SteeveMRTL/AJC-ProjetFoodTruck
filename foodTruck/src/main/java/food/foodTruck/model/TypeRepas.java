@@ -2,11 +2,12 @@ package food.foodTruck.model;
 
 import java.util.Collection;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
-
+@Entity
 public class TypeRepas {
 
 	//attributs

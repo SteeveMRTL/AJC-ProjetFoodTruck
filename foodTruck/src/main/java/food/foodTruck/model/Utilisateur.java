@@ -1,10 +1,13 @@
 package food.foodTruck.model;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
@@ -31,6 +34,8 @@ public class Utilisateur {
 	@ManyToOne
 	@JoinColumn(name= "idAdresse")
 	private Adresse adresse;
+	@OneToMany(mappedBy="utilisateur")
+	private Collection<Avis> avis;
 	@Version
 	private int version;
 	
