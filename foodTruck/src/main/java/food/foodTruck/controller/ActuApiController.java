@@ -1,4 +1,4 @@
-package food.foodTruck.controleur;
+package food.foodTruck.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,8 @@ import food.foodTruck.model.Actualite;
 import food.foodTruck.repository.ActualiteRepository;
 
 @RestController                   //ApiRest
-@RequestMapping("/users")
-public class UserApiContreleur {
+@RequestMapping("/actus")
+public class ActuApiController {
 	
 	@Autowired
 	private  ActualiteRepository repo;
