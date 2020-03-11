@@ -31,9 +31,9 @@ public class Utilisateur {
 	@ManyToOne
 	@JoinColumn (name ="idRole")
 	private Role role;
-	@ManyToOne
-	@JoinColumn(name= "idAdresse")
-	private Adresse adresse;
+//	@ManyToOne
+//	@JoinColumn(name= "idAdresse")
+//	private Adresse adresse;
 	@OneToMany(mappedBy="utilisateur")
 	private Collection<Avis> avis;
 	@Version
@@ -45,24 +45,6 @@ public class Utilisateur {
 	public Utilisateur() {
 		super();
 	}
-	
-
-	public Utilisateur(String idUtilisateur, String nom, String prenom, Genre genre, String dateDeNaissance, String mdp,
-		String email, Societe societe, String historique, Role role, Adresse adresse, int version) {
-	super();
-	this.idUtilisateur = idUtilisateur;
-	this.nom = nom;
-	this.prenom = prenom;
-	this.genre = genre;
-	this.dateDeNaissance = dateDeNaissance;
-	this.mdp = mdp;
-	this.email = email;
-	this.societe = societe;
-	this.historique = historique;
-	this.role = role;
-	this.adresse = adresse;
-	this.version = version;
-}
 
 
 	//Accesseurs
@@ -166,15 +148,15 @@ public class Utilisateur {
 		this.role = role;
 	}
 
-
-	public Adresse getAdresse() {
-		return adresse;
-	}
-
-
-	public void setAdresse(Adresse adresse) {
-		this.adresse = adresse;
-	}
+//
+//	public Adresse getAdresse() {
+//		return adresse;
+//	}
+//
+//
+//	public void setAdresse(Adresse adresse) {
+//		this.adresse = adresse;
+//	}
 
 
 	public int getVersion() {
@@ -187,13 +169,13 @@ public class Utilisateur {
 	}
 
 
-	@Override
-	public String toString() {
-		return "Utilisateur [idUtilisateur=" + idUtilisateur + ", nom=" + nom + ", prenom=" + prenom + ", genre="
-				+ genre + ", dateDeNaissance=" + dateDeNaissance + ", mdp=" + mdp + ", email=" + email + ", societe="
-				+ societe + ", historique=" + historique + ", role=" + role + ", adresse=" + adresse + ", version="
-				+ version + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Utilisateur [idUtilisateur=" + idUtilisateur + ", nom=" + nom + ", prenom=" + prenom + ", genre="
+//				+ genre + ", dateDeNaissance=" + dateDeNaissance + ", mdp=" + mdp + ", email=" + email + ", societe="
+//				+ societe + ", historique=" + historique + ", role=" + role + ", adresse=" + adresse + ", version="
+//				+ version + "]";
+//	}
 
 	
 	
