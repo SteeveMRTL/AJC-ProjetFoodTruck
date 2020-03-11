@@ -1,0 +1,51 @@
+<h2>Catalogue</h2>
+<br>
+
+<label for="usr" >Recherche d'un produit:</label>
+<input type="text" class="form-control" id="usr" [(ngModel)]="key"><br>
+
+<!-- Pour les produits du foodtruck -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nom du produits</th>
+      <th>Prix</th>
+      <th>Composition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of ListProduits">
+      <td><img src={{product.imageUrl}} class="img-rounded" height="100px"></td>
+      <td><a [routerLink]="['/catalogue', product.produitId]">{{product.nom}}</a></td>
+      <td>{{product.prix}}€</td>
+      <td>{{product.compoProduit}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Ancien catalogue -->
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Code</th>
+        <th>Release Date</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of filterNameContaining(key)">
+        <td><img src={{product.imageUrl}} class="img-rounded" height="100px"></td>
+        <td>{{product.productId}}</td>
+        <td><a [routerLink]="['/catalogue', product.productId]">{{product.productName}}</a></td>
+        <td>{{product.productCode}}</td>
+        <td>{{product.releaseDate}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+      </tr>
+    </tbody>
+  </table>

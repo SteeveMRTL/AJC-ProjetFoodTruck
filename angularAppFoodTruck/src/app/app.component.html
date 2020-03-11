@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row" *ngIf="false">
+    <div class="col-xs-12">
+      <h1>Page de {{title}}</h1>
+      <br>
+      <!-- <h2>Mes appareils</h2> -->
+        <app-appareil [userName]="userName" [lastName]="firstName"  (ratingUserName)="onRatingUserNameClicked($event);" (ratingLastName)="onRatingLastNameClicked($event);"></app-appareil>
+    </div>
+  <!-- <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">
+    Tout allumer
+  </button> -->
+</div>
+
+<div *ngIf="false">
+  <h2>Les héros :</h2>
+  <br>
+  <ul>
+    <li *ngFor="let item of heroes">
+      <h4>{{item}}</h4>
+    </li>
+  </ul>
+</div>
+
+<app-composant prenom={{userName}} nom={{firstName}} *ngIf="false"> </app-composant> 
+
+<div *ngIf="false">
+<app-formulaire></app-formulaire>
+<!-- <app-tableau></app-tableau> -->
+</div>
+
+
+<br>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Page de {{title}}</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="home">Home</a></li>
+      <li><a routerLink="users">Liste User</a></li>
+      <li><a routerLink="catalogue">Catalogue</a></li>
+      <li><a routerLink="inscription">Inscription</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+</div>
+
+<app-reactive-form></app-reactive-form>

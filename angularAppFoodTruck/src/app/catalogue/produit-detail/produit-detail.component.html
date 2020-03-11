@@ -1,0 +1,36 @@
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create three equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+</style>
+
+<h2>{{product.nom} details :</h2><br>
+<div class="row">
+    <div class="column">
+        <img src={{produit.imageUrl}} class="img-rounded" style="float:left;">
+    </div>
+    <div class="column">
+        <h5>Product ID : {{produit.idProduit}}</h5>
+        <br>
+        <h5>Product Name : {{produit.nom}}</h5>
+        <br>
+        <h5>Product Code : {{produit.compoProduit}}</h5>
+        <br>
+        <h4>Price : {{produit.prix}} €</h4>
+    </div>
+</div>

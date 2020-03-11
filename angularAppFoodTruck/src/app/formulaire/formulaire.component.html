@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Page de {{title | convertToSpacePipe : '-'}}</h1>
+      <br>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" class="form-control" [(ngModel)]="currentUser.email" placeholder="e-mail"/>
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prénom:</label>
+        <input type="text" name="prenom" class="form-control" [(ngModel)]="currentUser.prenom" placeholder="Prénom"/>
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" class="form-control" [(ngModel)]="currentUser.nom" placeholder="Nom"/>
+      </div>
+      <div class="form-group">
+        <label for="mdp">Mot de passe:</label>
+        <input type="password" name="mdp" class="form-control" [(ngModel)]="currentUser.mdp" placeholder="Mot de passe"/>
+      </div>
+      <div class="form-group">
+        <label for="dateDeNaissance">Date de naissance:</label>
+        <input type="date" name="dateDeNaissance" class="form-control" [(ngModel)]="currentUser.dateDeNaissance" placeholder="date de naissance"/>
+      </div>
+      <div class="form-group">
+        <label for="profil">Profil:</label>
+        <select name="nom" class="form-control" [(ngModel)]="currentUser.profil">
+          <option>Admin</option>
+          <option selected>Étudiant</option>
+          <option>Commercial</option>
+        </select>
+      </div>  
+    </div>
+  </div>
+  <button class="btn btn-success" (click)="addUser()">Enregistrer</button>
+
+  <br><br>
+  <div *ngIf="personnes.length>0">
+    <h2>Utilisateurs</h2>         
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Date de naissance</th>
+          <th>Profil</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of personnes">
+          <td>{{user.id}}</td>
+          <td>{{user.prenom}}</td>
+          <td>{{user.nom}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.dateDeNaissance}}</td>
+          <td>{{user.profil}}</td>
+          <!-- <td><button class="btn-success" (click)="modify({{user}})">Modifier</button></td>
+          <td><button class="btn-success">Supprimer</button></td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

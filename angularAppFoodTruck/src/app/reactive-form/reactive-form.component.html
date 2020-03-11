@@ -1,0 +1,66 @@
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="submitUser()">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Inscription</h1>
+        <br>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" name="email" class="form-control" formControlName="email" placeholder="e-mail"/>
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom:</label>
+          <input type="text" name="prenom" class="form-control" formControlName="prenom" placeholder="Prénom"/>
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom:</label>
+          <input type="text" name="nom" class="form-control" formControlName="nom" placeholder="Nom"/>
+        </div>
+        <div class="form-group">
+          <label for="mdp">Mot de passe:</label>
+          <input type="password" name="mdp" class="form-control" formControlName="mdp" placeholder="Mot de passe"/>
+        </div>
+        <div class="form-group">
+          <label for="dateDeNaissance">Date de naissance:</label>
+          <input type="date" name="dateDeNaissance" class="form-control" formControlName="dateDeNaissance" placeholder="date de naissance"/>
+        </div>
+        <div class="form-group">
+          <label for="profil">Profil:</label>
+          <select name="nom" class="form-control" formControlName="profil">
+            <option>Admin</option>
+            <option selected>Étudiant</option>
+            <option>Commercial</option>
+          </select>
+        </div>  
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="submitUser()">Enregistrer</button>
+  </form>
+  
+    <br><br>
+    <div *ngIf="personnes.length>0">
+      <h2>Utilisateurs</h2>         
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Date de naissance</th>
+            <th>Profil</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of personnes">
+            <td>{{user.id}}</td>
+            <td>{{user.prenom}}</td>
+            <td>{{user.nom}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.dateDeNaissance}}</td>
+            <td>{{user.profil}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>  

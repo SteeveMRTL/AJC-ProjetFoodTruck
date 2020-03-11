@@ -1,0 +1,9 @@
+    <li class="list-group-item">
+    <h4>Utilisateur : {{userName}}</h4>
+    
+    <label>Nom</label>
+    <input type="text" class="form-control" [(ngModel)]="userName" (keyup)="NotifyUserName();"/>
+    
+    <label>Prénom</label>
+    <input type="text" class="form-control" [(ngModel)]="lastName" (keyup)="NotifyLastName();"/>
+    </li>
