@@ -9,9 +9,11 @@ import javax.persistence.Version;
 
 @Entity
 public class Role {
+	@Id
 	private int idRole;
 	private String nom;
 	private Collection<Utilisateur> utilisateur;
+	@Version
 	private int version;
 	
 	
@@ -32,7 +34,6 @@ public class Role {
 
 
 	//Accesseurs
-@Version
 	public int getVersion() {
 		return version;
 	}
@@ -41,7 +42,6 @@ public class Role {
 		this.version = version;
 	}
 	
-	@Id
 	public int getIdRole() {
 		return idRole;
 	}

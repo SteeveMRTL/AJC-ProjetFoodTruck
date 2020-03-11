@@ -11,16 +11,19 @@ import javax.persistence.Version;
 public class RegimeSpecial {
 
 	//attributs
+	@Id
 	private int idRegimeSpecial;
 	private String regimeSpecial;
+	@OneToMany(mappedBy="regimeSpecial")
 	private Collection<Produit> produits;
+	@Version
 	private int version;
 		
 	public RegimeSpecial() {
 		super();
 	}
 	
-	@Id
+	
 	public int getIdRegimeSpecial() {
 		return idRegimeSpecial;
 	}
@@ -34,7 +37,6 @@ public class RegimeSpecial {
 		this.regimeSpecial = regimeSpecial;
 	}
 	
-	@OneToMany(mappedBy="regimeSpecial")
 	public Collection<Produit> getProduits() {
 		return produits;
 	}
@@ -43,7 +45,6 @@ public class RegimeSpecial {
 		this.produits = produits;
 	}
 
-	@Version
 	public int getVersion() {
 		return version;
 	}

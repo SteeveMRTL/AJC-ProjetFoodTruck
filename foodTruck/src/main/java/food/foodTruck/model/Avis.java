@@ -10,18 +10,24 @@ import food.foodTruck.model.Utilisateur;
 public class Avis {
 	
 	//attribut
+	@Id
 	private int idAvis;
+	
 	private Utilisateur utilisateur;
+	
 	private String commentaire;
+	
 	private int note;
+	
+	@Version
 	private int version;
+	
 	
 	//constructeur
 	public Avis() {
 		super();
 	}
 
-	@Id
 	public int getIdAvis() {
 		return idAvis;
 	}
@@ -54,7 +60,6 @@ public class Avis {
 		this.note = note;
 	}
 
-	@Version
 	public int getVersion() {
 		return version;
 	}

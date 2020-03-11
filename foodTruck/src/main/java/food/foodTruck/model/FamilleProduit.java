@@ -9,13 +9,26 @@ import javax.persistence.Version;
 public class FamilleProduit {
 
 	// attributs
+	@Id
 	private int idFamilleProduit;
+	
 	private String libelle;
+	
 	private boolean actif;
+	
+	@OneToMany(mappedBy="FamilleProduit")
 	public Collection<Produit> produits;
+	
+	@Version
 	private int version;
 
-	@Id
+	
+	//constructeur
+	public FamilleProduit() {
+		super();
+	}
+	
+	//accesseurs
 	public int getIdFamilleProduit() {
 		return idFamilleProduit;
 	}
@@ -40,7 +53,6 @@ public class FamilleProduit {
 		this.actif = actif;
 	}
 
-	@OneToMany(mappedBy="FamilleProduit")
 	public Collection<Produit> getProduits() {
 		return produits;
 	}
@@ -49,7 +61,6 @@ public class FamilleProduit {
 		this.produits = produits;
 	}
 
-	@Version
 	public int getVersion() {
 		return version;
 	}

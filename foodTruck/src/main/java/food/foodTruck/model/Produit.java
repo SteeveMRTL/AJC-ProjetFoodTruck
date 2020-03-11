@@ -10,16 +10,23 @@ import javax.persistence.Version;
 public class Produit {
 	
 	//attributs
+	@Id
 	private int idProduit;
+	@ManyToOne
+	@JoinColumn(name="idTypeRepas")
 	private TypeRepas typeRepas;
+	@ManyToOne
+	@JoinColumn(name="idFamilleProduit")
 	private FamilleProduit familleproduit;
 	private int prix;
 	private String imageUrl;
 	private String compoProduit;
 	private int stock;
-	private String dateLivraison;//à revoir dans le MOA
+	@ManyToOne
+	@JoinColumn(name="idRegimeSpecial")
 	private RegimeSpecial regimeSpecial;
 	private String jourDispo;
+	@Version
 	private int version;
 	
 	//constructeur
@@ -27,7 +34,6 @@ public class Produit {
 		super();
 	}
 
-	@Id
 	public int getIdProduit() {
 		return idProduit;
 	}
@@ -36,8 +42,6 @@ public class Produit {
 		this.idProduit = idProduit;
 	}
 
-	@ManyToOne
-	@JoinColumn(name="idTypeRepas")
 	public TypeRepas getTypeRepas() {
 		return typeRepas;
 	}
@@ -46,8 +50,6 @@ public class Produit {
 		this.typeRepas = typeRepas;
 	}
 
-	@ManyToOne
-	@JoinColumn(name="idFamilleProduit")
 	public FamilleProduit getFamilleproduit() {
 		return familleproduit;
 	}
@@ -88,16 +90,6 @@ public class Produit {
 		this.stock = stock;
 	}
 
-	public String getDateLivraison() {
-		return dateLivraison;
-	}
-
-	public void setDateLivraison(String dateLivraison) {
-		this.dateLivraison = dateLivraison;
-	}
-
-	@ManyToOne
-	@JoinColumn(name="idRegimeSpecial")
 	public RegimeSpecial getRegimeSpecial() {
 		return regimeSpecial;
 	}
@@ -114,7 +106,6 @@ public class Produit {
 		this.jourDispo = jourDispo;
 	}
 
-	@Version
 	public int getVersion() {
 		return version;
 	}

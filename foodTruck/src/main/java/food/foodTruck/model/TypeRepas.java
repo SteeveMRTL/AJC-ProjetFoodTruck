@@ -10,12 +10,15 @@ import javax.persistence.Version;
 public class TypeRepas {
 
 	//attributs
+	@Id
 	private int idTypeRepas;
 	private int libelle;
 	private String heureLimite;
 	private boolean actif;
-	private int version;
+	@OneToMany(mappedBy="typeRepas")
 	private Collection<Produit> produits;
+	@Version
+	private int version;
 	
 	//constructeur
 	public TypeRepas() {
@@ -23,7 +26,6 @@ public class TypeRepas {
 	}
 
 	//accssseurs
-	@Id
 	public int getIdTypeRepas() {
 		return idTypeRepas;
 	}
@@ -56,7 +58,6 @@ public class TypeRepas {
 		this.actif = actif;
 	}
 	
-	@OneToMany(mappedBy="typeRepas")
 	public Collection<Produit> getProduits() {
 		return produits;
 	}
@@ -65,7 +66,6 @@ public class TypeRepas {
 		this.produits = produits;
 	}
 
-	@Version
 	public int getVersion() {
 		return version;
 	}
